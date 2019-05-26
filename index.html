@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>まほすず</title>
+  </head>
+  <body>
+    
+    <!--メールフォーム案１テスト-->
+    <h1>メールフォーム</h1>
+    <p>メールフォーム案1</p>
+    <input type="button" onclick="location.href='https://mail.google.com/mail/?view=cm&to=hoge_to@example.com&su=まほすずおたより &body= まほすずネーム：%0D%0A'"value="まほすずおたよりメール">
+  
+    <br>
+    <br>
+
+    <!--スライドショーテスト1-->
+    <h1>ラジオパーソナリティ－</h1>
+    <img id="myimg" onclick="slideshow()" src="img/1.png" width="400" height="300">
+    <input type="button" value="IMG1" onclick="go_img1()">
+    <input type="button" value="IMG2" onclick="go_img2()">
+    <input type="button" value="IMG3" onclick="go_img3()">
+    <script>
+    var img_src = new Array("img/1.png","img/2.png","img/3.png");
+    var num = 0;
+
+    function go_img1(){
+        document.getElementById("myimg").src=img_src[0];
+    }
+    function go_img2(){
+        document.getElementById("myimg").src=img_src[1];
+    }
+    function go_img3(){
+        document.getElementById("myimg").src=img_src[2];
+    }
+    </script>
+  <!--スライドショーテスト2-->
+
+  </body>
+</html>
