@@ -2,9 +2,11 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="sample.css" />
     <title>まほすず</title>
   </head>
   <body>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     
     <!--メールフォーム案１テスト-->
     <h1>メールフォーム</h1>
@@ -34,7 +36,27 @@
         document.getElementById("myimg").src=img_src[2];
     }
     </script>
+
   <!--スライドショーテスト2-->
 
+  <style>
+      .overlay {
+        background:#000;
+        opacity:0;
+        transition:1s;
+      }
+      .overlay.in {
+        opacity:0.25;
+      }
+  </style>
+
+  <div class="overlay" style="width:200px; height:200px;">
+      このボックスのopacityが変わります
+  </div>
+      
+  <button id="example1" onclick="$('.overlay').addClass('in');">.fadeIn()をCSSで</button>
+  <button id="example1" onclick="$('.overlay').removeClass('in');">.fadeOut()をCSSで</button>
+
+  <!--ボイステスト1-->
   </body>
 </html>
