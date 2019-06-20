@@ -63,6 +63,35 @@
   <button id="example1" onclick="$('.overlay').addClass('in');">.fadeIn()をCSSで</button>
   <button id="example1" onclick="$('.overlay').removeClass('in');">.fadeOut()をCSSで</button>
 
-  <!--ボイステスト1-->
+  <!--メールフォームテスト1-->
+  <form name="contact" method="POST" action="mail.php">
+    <p>
+        <label> 名前：<br> <input type="text" name="name" id="input_name"/></label>
+    </p>
+
+    <p>
+        <label> メールアドレス：<br> <input type="email" name="email"id="input_mail"></label>
+    </p>
+
+    <p>
+        <label> 件名：<br> <input type="text" name="subject" id="input_subject"></label>
+    </p>
+
+    <p>
+        <label> 問い合わせ内容：<br> <textarea name="message" id="text_content"></textarea></label>
+    </p>
+
+    <p>
+        <button type="submit">送信</button>
+    </p>
+
+    <?php
+    $message = "name: " . $_POST["name"] . "\nsubject: " . $_POST["subject"] . "\nfrom: " . $_POST["email"] . "\nbody: \n" . $_POST["message"];
+    $safe_subject = str_replace(array("\r","\n"),array(" "," "), $_POST["subject"]);
+    if (!mb_send_mail("test@gmail.com", $safe_subject , $message)) {
+    exit("error");
+    }
+    ?>
+
   </body>
 </html>
